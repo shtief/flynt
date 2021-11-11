@@ -68,7 +68,8 @@ class TimberDynamicResize
     public function parseRequest($wp)
     {
         if (isset($wp->query_vars[static::IMAGE_QUERY_VAR])) {
-            $this->checkAndGenerateImage($wp->query_vars[static::IMAGE_QUERY_VAR]);
+            $imagePath = urldecode($wp->query_vars[static::IMAGE_QUERY_VAR]);
+            $this->checkAndGenerateImage($imagePath);
         }
     }
 
